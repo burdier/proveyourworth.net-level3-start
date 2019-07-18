@@ -39,7 +39,7 @@ def get_image_to_sign(uri_image: str) -> bytes:
 def sing_image(image: bytes) -> None:
     image = Image.open(image)
     draw = ImageDraw.Draw(image)
-    draw.text((20,70), f"Name: Luis Miguel Burdier, \n hash:{get_hash(start_uri)}", fill=(255,255,0))
+    draw.text((20,70), f"Name: your name here, \n hash:{get_hash(start_uri)}", fill=(255,255,0))
     image.save("image.jpeg","JPEG")
     
     
@@ -53,8 +53,8 @@ def post_back_to(payload: str) -> None:
         "image":open(file_path / "image.jpeg","rb")
     }
     data = {
-        "email":"miguelluis@outlook.com",
-        "name":"Luis Miguel Burdier",
+        "email":"your email here",
+        "name":"your name here",
         "aboutme": "Me encanta trabajar con tecnologias,  y nunca parar de aprender, sobre todo buenas practicas"
     }
     request = session.post(post_uri, data=data, files=file)
